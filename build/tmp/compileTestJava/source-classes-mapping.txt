@@ -1,2 +1,0 @@
-com/demoqa/automation_practice_form/tests/CheckFormTest.java
- com.demoqa.automation_practice_form.tests.CheckFormTest
