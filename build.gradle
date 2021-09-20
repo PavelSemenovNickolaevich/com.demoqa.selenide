@@ -29,6 +29,11 @@ dependencies {
             "com.codeborne:pdf-test:1.6.1",
             "com.codeborne:xls-test:1.4.3",
             "com.opencsv:opencsv:5.3")
+    implementation group: 'net.lingala.zip4j', name: 'zip4j', version: '2.9.0'
+   // implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.24'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.0.0'
+    implementation group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13'
+    implementation group: 'fr.opensagres.xdocreport', name: 'fr.opensagres.xdocreport.converter.docx.xwpf', version: '2.0.2'
     testImplementation("io.qameta.allure:allure-selenide:2.15.0")
     implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
     testRuntimeOnly(
