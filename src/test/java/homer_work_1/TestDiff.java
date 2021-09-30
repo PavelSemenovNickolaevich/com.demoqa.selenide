@@ -1,13 +1,7 @@
 package homer_work_1;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 
 public class TestDiff {
 
@@ -19,18 +13,18 @@ public class TestDiff {
 
          Если может - приведите пример, когда.*/
 
-       //Да может! Разве возможно, что ("h1 div") могут быть на одном уровне идив быть вложенным а h1? Так недопутимо.
+        //Да может! Разве возможно, что ("h1 div") могут быть на одном уровне идив быть вложенным а h1? Так недопутимо.
         //Есть варинат стдеать h1 + div, тогда будет выбран следующий элемент , как в варианте $("h1").$("div").
 
 
         Configuration.startMaximized = true;
         //open("https://www.sitepoint.com/community/t/how-problematic-is-it-to-wrap-h1-tag-within-divs/6823");
-      //  open("https://ru.wikipedia.org/wiki/Google");
-       //$("h1 div").shouldHave(Condition.id("ember30"));
-       // String text = $("h1 div").getText();
-      //  $("h1").$("div").should(Condition.visible);
-       // $("h1 div").should(Condition.visible);
-      //  System.out.println(text);
+        //  open("https://ru.wikipedia.org/wiki/Google");
+        //$("h1 div").shouldHave(Condition.id("ember30"));
+        // String text = $("h1 div").getText();
+        //  $("h1").$("div").should(Condition.visible);
+        // $("h1 div").should(Condition.visible);
+        //  System.out.println(text);
 
 //        sleep(4000);
 //      // $("h1").$("div").shouldHave(Condition.id("ember30"));

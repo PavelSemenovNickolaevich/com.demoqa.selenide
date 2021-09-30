@@ -4,14 +4,12 @@ import com.codeborne.selenide.SelenideElement;
 import com.demoqa.automation_practice_form.components.CalendarForm;
 
 import java.io.File;
-import java.util.Calendar;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.demoqa.automation_practice_form.tests.TestData.*;
-import static com.demoqa.automation_practice_form.tests.TestData.cityOfState;
 
 public class RegistrationPage {
 
@@ -35,59 +33,72 @@ public class RegistrationPage {
         open("https://demoqa.com/automation-practice-form");
     }
 
-    public void typeFirstName(String name) {
+    public RegistrationPage typeFirstName(String name) {
         firstName.setValue(name);
+        return this;
     }
 
-    public void typeLastName(String surname) {
+    public RegistrationPage typeLastName(String surname) {
         lastName.setValue(surname);
+        return this;
     }
 
-    public void setEmail(String mail) {
+    public RegistrationPage setEmail(String mail) {
         email.setValue(mail);
+        return this;
     }
 
-    public void setRadioButtonMale() {
+    public RegistrationPage setRadioButtonMale() {
         radioButtonMale.click();
+        return this;
     }
 
-    public void setMobilePhone(String phone) {
+    public RegistrationPage setMobilePhone(String phone) {
         mobilePhone.setValue(phone);
+        return this;
     }
 
-    public void setAddress(String address) {
+    public RegistrationPage setAddress(String address) {
         currentAddress.setValue(address);
+        return this;
     }
 
-    public void setCheckBoxHobbiesSport() {
+    public RegistrationPage setCheckBoxHobbiesSport() {
         checkBoxHobbiesSport.click();
+        return this;
     }
 
-    public void setBirthDate(String monthOfBirth, String yearOfBirth, String dayOfBirth) {
+    public RegistrationPage setBirthDate(String monthOfBirth, String yearOfBirth, String dayOfBirth) {
         calendarForm.setDateOfBirth(monthOfBirth, yearOfBirth, dayOfBirth);
+        return this;
     }
 
-    public void uploadPicture(String path) {
+    public RegistrationPage uploadPicture(String path) {
         uploadPicture.uploadFile(new File(path));
+        return this;
     }
 
-    public void setSubjects(String favoriteSub) {
+    public RegistrationPage setSubjects(String favoriteSub) {
         subjects.setValue(favoriteSub).pressEnter();
+        return this;
     }
 
-    public void setState(String stateOfCountry) {
+    public RegistrationPage setState(String stateOfCountry) {
         state.find("input").setValue(stateOfCountry).pressEnter();
+        return this;
     }
 
-    public void setCity(String cityOfCountry) {
+    public RegistrationPage setCity(String cityOfCountry) {
         city.find("input").setValue(cityOfCountry).pressEnter();
+        return this;
     }
 
-    public void submitPage() {
+    public RegistrationPage submitPage() {
         submit.scrollTo().click();
+        return this;
     }
 
-    public void checkForm() {
+    public RegistrationPage checkForm() {
         $("tbody").shouldHave(text(name + " " + surname),
                 text(mail),
                 text("Male"),
@@ -99,6 +110,7 @@ public class RegistrationPage {
                 text(stateOfCountry),
                 text(cityOfState)
         );
+        return this;
     }
 
 }

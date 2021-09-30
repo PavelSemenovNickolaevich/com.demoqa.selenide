@@ -3,6 +3,7 @@ package parameterized_tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
+import parameterized_tests.domain.Header;
 import parameterized_tests.domain.MenuFooterAndHeader;
 import parameterized_tests.page.ResumeAddPage;
 import parameterized_tests.page.ResumeMainPage;
@@ -48,6 +49,12 @@ public class ParameterizedTests extends TestBase {
     @EnumSource(value = MenuFooterAndHeader.class)
     void shouldContainHeaderAndFooterFromENUM(MenuFooterAndHeader menuFooterAndHeader) {
         mainPage.getAndCheckHeaderAndFooter(MenuFooterAndHeader.HEADER.getDesc(), MenuFooterAndHeader.FOOTER.getDesc());
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = Header.class)
+    void shouldContainHeaderENUM(Header header) {
+        mainPage.getAndCheckHeader(header.getDesc());
     }
 
     static Stream<Arguments> testWithMethodSource() {
