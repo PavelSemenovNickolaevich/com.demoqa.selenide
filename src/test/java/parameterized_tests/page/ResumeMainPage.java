@@ -45,4 +45,8 @@ public class ResumeMainPage {
         header.shouldHave(text(head));
         footer.shouldHave(text(foot));
     }
+
+    public void getAndCheckHeader(String head) {
+        header.shouldHave(text(head));
+    }
 }
