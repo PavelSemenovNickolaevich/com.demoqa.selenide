@@ -1,6 +1,8 @@
 package allurereports;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +19,11 @@ public class SelenideTest {
         Configuration.startMaximized = true;
     }
 
+
     @Test
     public void testGithub() {
+
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
         open("https://github.com");
 
